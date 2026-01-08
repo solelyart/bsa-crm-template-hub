@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Activity Log</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 800px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        h2 { color: #4472C4; margin-top: 25px; border-left: 4px solid #4472C4; padding-left: 10px; }
+        .header-box { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 20px; }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #4472C4; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .section { background: #f8f9fa; border-radius: 8px; padding: 15px; margin: 15px 0; }
+        .task-item { padding: 8px 0; border-bottom: 1px dashed #dee2e6; }
+        .notes-area { background: #fffbcc; border: 1px solid #e6d800; border-radius: 5px; padding: 15px; min-height: 60px; margin-top: 10px; }
+        .focus-box { background: #e3f2fd; border: 2px solid #2196f3; border-radius: 8px; padding: 15px; margin: 15px 0; }
+        .category-tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 9pt; margin: 2px; }
+        .cat-crm { background: #bbdefb; color: #1565c0; }
+        .cat-dev { background: #c8e6c9; color: #2e7d32; }
+        .cat-data { background: #fff9c4; color: #f57f17; }
+        .cat-training { background: #f3e5f5; color: #7b1fa2; }
+        .cat-meeting { background: #ffccbc; color: #bf360c; }
+        .cat-support { background: #b2dfdb; color: #00695c; }
+        .hours-total { font-size: 18pt; font-weight: bold; color: #2E5090; text-align: center; padding: 10px; background: #e8f4fd; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>📅 DAILY ACTIVITY LOG</h1>
+    <p style="margin: 10px 0 0 0; font-size: 14pt;">[YYYY-MM-DD] | [Day of Week]</p>
+</div>
+
+<h2>🎯 Today's Focus</h2>
+<div class="focus-box">
+    <strong>Primary Goal:</strong>
+    <div style="min-height: 30px; margin-top: 5px;"></div>
+</div>
+
+<h2>📋 Activities Log</h2>
+<table>
+    <tr>
+        <th style="width: 10%;">Time</th>
+        <th style="width: 40%;">Activity Description</th>
+        <th style="width: 20%;">Category</th>
+        <th style="width: 10%;">Hours</th>
+        <th style="width: 20%;">Status</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>☐ Done ☐ In Progress</td>
+    </tr>
+</table>
+
+<p><strong>Category Legend:</strong></p>
+<div style="margin: 10px 0;">
+    <span class="category-tag cat-crm">CRM</span>
+    <span class="category-tag cat-dev">Development</span>
+    <span class="category-tag cat-data">Data/Integration</span>
+    <span class="category-tag cat-training">Training</span>
+    <span class="category-tag cat-meeting">Meeting</span>
+    <span class="category-tag cat-support">Support</span>
+    <span class="category-tag" style="background: #e0e0e0;">Documentation</span>
+    <span class="category-tag" style="background: #ffcdd2;">Admin</span>
+</div>
+
+<div class="hours-total">
+    Total Hours: [##]
+</div>
+
+<h2>✅ Completed Today</h2>
+<div class="section">
+    <div class="task-item">☑ ________________________________________________</div>
+    <div class="task-item">☑ ________________________________________________</div>
+    <div class="task-item">☑ ________________________________________________</div>
+    <div class="task-item">☑ ________________________________________________</div>
+    <div class="task-item">☑ ________________________________________________</div>
+</div>
+
+<h2>🔜 Carry Forward to Tomorrow</h2>
+<div class="section">
+    <div class="task-item">☐ ________________________________________________</div>
+    <div class="task-item">☐ ________________________________________________</div>
+    <div class="task-item">☐ ________________________________________________</div>
+</div>
+
+<h2>💡 Ideas & Insights</h2>
+<div class="notes-area">
+    <p><em>Capture any ideas, observations, or insights from today...</em></p>
+</div>
+
+<h2>🚧 Blockers Encountered</h2>
+<div class="section">
+    <table>
+        <tr>
+            <th style="width: 50%;">Blocker</th>
+            <th style="width: 30%;">Action Taken</th>
+            <th style="width: 20%;">Resolved?</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>☐ Yes ☐ No</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>☐ Yes ☐ No</td>
+        </tr>
+    </table>
+</div>
+
+<h2>📝 General Notes</h2>
+<div class="notes-area" style="min-height: 80px;"></div>
+
+<h2>📊 Quick Stats</h2>
+<table>
+    <tr>
+        <th>Metric</th>
+        <th>Count</th>
+    </tr>
+    <tr>
+        <td>Tasks Completed</td>
+        <td style="text-align: center;"></td>
+    </tr>
+    <tr>
+        <td>Meetings Attended</td>
+        <td style="text-align: center;"></td>
+    </tr>
+    <tr>
+        <td>Emails Processed</td>
+        <td style="text-align: center;"></td>
+    </tr>
+    <tr>
+        <td>Support Tickets Handled</td>
+        <td style="text-align: center;"></td>
+    </tr>
+</table>
+
+<hr style="margin-top: 30px; border: 1px dashed #ccc;">
+<p style="text-align: center; color: #666; font-size: 9pt;">
+    End of Day Summary | Tomorrow's Priority: _________________________________
+</p>
+
+</body>
+</html>

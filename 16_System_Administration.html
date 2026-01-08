@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>System Administration</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        .header-box { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px; }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #4facfe; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .section-header { background: #e3f2fd; padding: 10px 15px; border-left: 4px solid #4facfe; margin: 20px 0 10px 0; font-weight: bold; font-size: 12pt; }
+        .notes-area { background: #e8f4fc; border: 1px solid #b3e0ff; border-radius: 5px; padding: 15px; min-height: 60px; margin: 10px 0; }
+        .alert-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 5px; padding: 10px 15px; margin: 10px 0; }
+        .checkbox { width: 18px; height: 18px; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>⚙️ SYSTEM ADMINISTRATION</h1>
+    <p>Salesforce Configuration & User Management</p>
+</div>
+
+<div class="section-header">👥 USER MANAGEMENT LOG</div>
+<table>
+    <tr>
+        <th style="width: 10%;">Date</th>
+        <th style="width: 20%;">User</th>
+        <th style="width: 15%;">Action</th>
+        <th style="width: 20%;">Profile/Role</th>
+        <th style="width: 15%;">Requested By</th>
+        <th style="width: 20%;">Notes</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>New User</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Deactivated</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Role Change</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Permission Update</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p><strong>Action Types:</strong> New User | Deactivated | Role Change | Profile Change | Permission Update | Password Reset</p>
+
+<div class="section-header">🔧 CONFIGURATION CHANGES</div>
+<table>
+    <tr>
+        <th style="width: 10%;">Date</th>
+        <th style="width: 15%;">Object</th>
+        <th style="width: 25%;">Change Description</th>
+        <th style="width: 15%;">Change Type</th>
+        <th style="width: 15%;">Requested By</th>
+        <th style="width: 20%;">Ticket/Reference</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Account</td>
+        <td></td>
+        <td>Field</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Opportunity</td>
+        <td></td>
+        <td>Validation Rule</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Lead</td>
+        <td></td>
+        <td>Workflow</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p><strong>Change Types:</strong> Field | Validation Rule | Workflow | Process Builder | Flow | Page Layout | Record Type | Permission Set | Report/Dashboard</p>
+
+<div class="section-header">🔐 PERMISSION SET ASSIGNMENTS</div>
+<table>
+    <tr>
+        <th style="width: 25%;">Permission Set</th>
+        <th style="width: 35%;">Description</th>
+        <th style="width: 20%;">Assigned To</th>
+        <th style="width: 20%;">Last Updated</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📊 STORAGE & LIMITS</div>
+<table>
+    <tr>
+        <th>Limit Type</th>
+        <th>Current Usage</th>
+        <th>Limit</th>
+        <th>% Used</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td>Data Storage</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>File Storage</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>API Calls (Daily)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Custom Objects</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="alert-box">
+    <strong>⚠️ Alerts & Notifications:</strong>
+    <p>[Note any storage warnings, limit alerts, or system notifications here]</p>
+</div>
+
+<div class="section-header">🔄 SCHEDULED JOBS & AUTOMATION</div>
+<table>
+    <tr>
+        <th style="width: 25%;">Job Name</th>
+        <th style="width: 25%;">Schedule</th>
+        <th style="width: 20%;">Last Run</th>
+        <th style="width: 15%;">Status</th>
+        <th style="width: 15%;">Notes</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Daily @ [time]</td>
+        <td></td>
+        <td>Active</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Weekly</td>
+        <td></td>
+        <td>Active</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📋 MAINTENANCE CHECKLIST</div>
+<table>
+    <tr>
+        <th style="width: 5%;">✓</th>
+        <th style="width: 35%;">Task</th>
+        <th style="width: 15%;">Frequency</th>
+        <th style="width: 15%;">Last Done</th>
+        <th style="width: 15%;">Next Due</th>
+        <th style="width: 15%;">Notes</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Review inactive users</td>
+        <td>Monthly</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Check storage usage</td>
+        <td>Weekly</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Review login history</td>
+        <td>Monthly</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Audit permission sets</td>
+        <td>Quarterly</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Review debug logs</td>
+        <td>As needed</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Check scheduled jobs</td>
+        <td>Weekly</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📝 ADMIN NOTES</div>
+<div class="notes-area">
+    [Document any ongoing admin tasks, issues, or observations]
+</div>
+
+<hr style="margin-top: 30px;">
+<p style="color: #666; font-size: 9pt; text-align: center;">
+    System Administration Template | 🔄 AREAS Section | BSA-CRM OneNote Notebook
+</p>
+
+</body>
+</html>

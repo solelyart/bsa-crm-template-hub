@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BSA-CRM AI Prompts</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; text-align: center; }
+        h2 { color: #4472C4; margin-top: 30px; border-left: 4px solid #4472C4; padding-left: 10px; }
+        .header-box { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 25px; }
+        .header-box h1 { color: white; border: none; margin: 0; font-size: 20pt; }
+        .header-box p { margin: 10px 0 0 0; opacity: 0.9; }
+        .prompt-card { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-left: 5px solid #11998e; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .card-title { font-weight: bold; font-size: 13pt; color: #333; }
+        .card-tag { background: #11998e; color: white; padding: 3px 10px; border-radius: 15px; font-size: 9pt; }
+        .prompt-box { background: #fff; border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; margin: 10px 0; font-family: Consolas, monospace; font-size: 10pt; white-space: pre-wrap; }
+        .tip-box { background: #d4edda; border-left: 4px solid #28a745; padding: 10px 15px; margin: 10px 0; font-size: 10pt; }
+        .use-case { color: #666; font-size: 10pt; margin-bottom: 10px; font-style: italic; }
+        .section-intro { background: #e8f5e9; border-radius: 8px; padding: 15px; margin: 15px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #11998e; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>🎯 BSA-CRM ROLE-SPECIFIC AI PROMPTS</h1>
+    <p>Tailored Prompts for Business Systems Analyst - CRM | Salesforce Focus</p>
+</div>
+
+<div class="section-intro">
+    <p><strong>About This Template:</strong> These prompts are specifically designed for your BSA-CRM role, covering requirements gathering, Salesforce administration, stakeholder management, and system documentation. Each prompt includes the "Act as..." identity for optimal results.</p>
+</div>
+
+<h2>📋 Requirements Gathering</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Requirements Document Generator</span>
+        <span class="card-tag">Core Skill</span>
+    </div>
+    <p class="use-case">Use after stakeholder meetings to create formal requirements</p>
+    <div class="prompt-box">Act as a Senior Business Systems Analyst with 10 years of CRM experience. Transform these stakeholder meeting notes into a formal Business Requirements Document (BRD):
+
+Include:
+1. **Executive Summary** (problem statement, proposed solution)
+2. **Business Requirements** (numbered, with priority and rationale)
+3. **Functional Requirements** (what the system must do)
+4. **Non-Functional Requirements** (performance, security, compliance)
+5. **User Stories** (As a [role], I want [feature], so that [benefit])
+6. **Acceptance Criteria** (testable conditions)
+7. **Assumptions & Constraints**
+8. **Dependencies**
+9. **Out of Scope**
+
+Format for OneNote with clear headings.
+
+Meeting Notes:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Gap Analysis Creator</span>
+        <span class="card-tag">Analysis</span>
+    </div>
+    <p class="use-case">Use when comparing current state vs. desired state</p>
+    <div class="prompt-box">Act as a CRM Business Analyst. Create a gap analysis from these notes:
+
+**Current State:** [Describe current process/system]
+**Desired State:** [Describe target process/system]
+
+Provide:
+1. **Gap Analysis Table:**
+   | Area | Current State | Desired State | Gap | Priority | Effort |
+
+2. **Root Cause Analysis** for each major gap
+3. **Recommended Solutions** (quick wins vs. long-term)
+4. **Implementation Roadmap** (phases)
+5. **Risk Assessment**
+6. **Resource Requirements**
+
+Notes:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>⚙️ Salesforce Administration</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Salesforce Configuration Documenter</span>
+        <span class="card-tag">Technical</span>
+    </div>
+    <p class="use-case">Use to document Salesforce configurations and customizations</p>
+    <div class="prompt-box">Act as a Salesforce Administrator. Document this configuration change:
+
+**Change Request:** [Describe the change]
+**Object(s) Affected:** [List Salesforce objects]
+
+Create documentation including:
+1. **Change Summary** (what, why, who requested)
+2. **Technical Specifications:**
+   - Fields created/modified
+   - Validation rules
+   - Workflow rules/Process Builder flows
+   - Permission sets/profiles affected
+   - Page layouts changed
+3. **Testing Checklist** (scenarios to test)
+4. **Rollback Plan**
+5. **User Impact** (who is affected, training needed)
+6. **Go-Live Checklist**
+
+Configuration Details:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Data Migration Planner</span>
+        <span class="card-tag">Data</span>
+    </div>
+    <p class="use-case">Use when planning data imports or migrations</p>
+    <div class="prompt-box">Act as a CRM Data Analyst. Create a data migration plan from these notes:
+
+**Source System:** [Name]
+**Target System:** Salesforce
+**Data Volume:** [Approximate records]
+
+Provide:
+1. **Data Mapping Table:**
+   | Source Field | Target Object | Target Field | Transformation | Notes |
+
+2. **Data Quality Rules** (validation, cleansing)
+3. **Migration Sequence** (order of operations)
+4. **Duplicate Management Strategy**
+5. **Testing Plan** (sample sizes, validation queries)
+6. **Rollback Procedure**
+7. **Post-Migration Validation Checklist**
+
+Source Data Details:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>👥 Stakeholder Management</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Stakeholder Communication Generator</span>
+        <span class="card-tag">Communication</span>
+    </div>
+    <p class="use-case">Use to create professional stakeholder updates</p>
+    <div class="prompt-box">Act as a Business Systems Analyst. Create a stakeholder communication from these project notes:
+
+**Audience:** [Executive/Manager/End User]
+**Purpose:** [Status Update/Change Announcement/Training Notice]
+
+Generate:
+1. **Subject Line** (clear, action-oriented)
+2. **Executive Summary** (3 sentences max)
+3. **Key Updates** (bullet points)
+4. **Impact on [Audience]** (what they need to know/do)
+5. **Timeline** (key dates)
+6. **Action Required** (if any)
+7. **Resources/Links**
+8. **Contact for Questions**
+
+Adjust tone for [formal/conversational] communication.
+
+Project Notes:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Training Material Creator</span>
+        <span class="card-tag">Training</span>
+    </div>
+    <p class="use-case">Use to create user training documentation</p>
+    <div class="prompt-box">Act as a CRM Training Specialist. Create end-user training documentation:
+
+**Feature/Process:** [Name]
+**Target Audience:** [Role/Department]
+**Skill Level:** [Beginner/Intermediate/Advanced]
+
+Create:
+1. **Overview** (what this feature does, why it matters)
+2. **Step-by-Step Instructions** (numbered, with screenshots placeholders)
+3. **Tips & Best Practices**
+4. **Common Mistakes to Avoid**
+5. **Troubleshooting Guide** (FAQ format)
+6. **Quick Reference Card** (one-page summary)
+7. **Knowledge Check Questions** (3-5 questions)
+
+Feature Details:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>📊 Reporting & Analysis</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Report Requirements Documenter</span>
+        <span class="card-tag">Reporting</span>
+    </div>
+    <p class="use-case">Use to document report/dashboard requirements</p>
+    <div class="prompt-box">Act as a CRM Reporting Analyst. Document these report requirements:
+
+**Report Name:** [Name]
+**Requested By:** [Stakeholder]
+**Purpose:** [Business question being answered]
+
+Create:
+1. **Report Specifications:**
+   - Report Type (Tabular/Summary/Matrix/Joined)
+   - Primary Object
+   - Related Objects
+   
+2. **Fields Required:**
+   | Field | Object | Grouping | Summarization |
+
+3. **Filters:**
+   | Field | Operator | Value | User-Configurable? |
+
+4. **Calculated Fields** (formulas needed)
+5. **Visualization Recommendations** (chart types)
+6. **Access/Sharing** (who needs access)
+7. **Refresh Frequency**
+8. **Sample Output** (mock data layout)
+
+Requirements Notes:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>🔄 Process Improvement</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Process Optimization Analyzer</span>
+        <span class="card-tag">Kaizen</span>
+    </div>
+    <p class="use-case">Use to analyze and improve business processes</p>
+    <div class="prompt-box">Act as a Business Process Analyst specializing in CRM optimization. Analyze this process:
+
+**Process Name:** [Name]
+**Current Pain Points:** [List issues]
+
+Provide:
+1. **Current State Assessment:**
+   - Process steps (numbered)
+   - Time per step
+   - Pain points per step
+   - Manual vs. automated
+
+2. **Improvement Opportunities:**
+   | Opportunity | Impact | Effort | Priority |
+
+3. **Recommended Future State:**
+   - Optimized process steps
+   - Automation recommendations
+   - Salesforce features to leverage
+
+4. **Implementation Plan:**
+   - Quick wins (< 1 week)
+   - Short-term (1-4 weeks)
+   - Long-term (1-3 months)
+
+5. **Success Metrics** (how to measure improvement)
+
+Process Details:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">UAT Test Case Generator</span>
+        <span class="card-tag">Testing</span>
+    </div>
+    <p class="use-case">Use to create comprehensive test cases</p>
+    <div class="prompt-box">Act as a QA Analyst for CRM systems. Create UAT test cases:
+
+**Feature Being Tested:** [Name]
+**User Stories:** [List or paste]
+
+Generate:
+1. **Test Case Table:**
+   | ID | Scenario | Pre-conditions | Steps | Expected Result | Pass/Fail |
+
+2. **Positive Test Cases** (happy path)
+3. **Negative Test Cases** (error handling)
+4. **Edge Cases** (boundary conditions)
+5. **Integration Test Cases** (if applicable)
+6. **Data Requirements** (test data needed)
+7. **Sign-Off Checklist**
+
+Requirements:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>📈 Performance Tracking</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Weekly Status Report Generator</span>
+        <span class="card-tag">Reporting</span>
+    </div>
+    <p class="use-case">Use to create your weekly status report for manager</p>
+    <div class="prompt-box">Act as a Business Systems Analyst. Create a professional weekly status report:
+
+**Week Ending:** [Date]
+**Projects:** [List active projects]
+
+From these notes, generate:
+1. **Executive Summary** (3 bullet points: top accomplishments)
+
+2. **Project Status Table:**
+   | Project | Status | % Complete | This Week | Next Week | Risks |
+
+3. **Key Accomplishments** (bullet points with impact)
+
+4. **Challenges & Blockers** (with mitigation plans)
+
+5. **Upcoming Priorities** (next week focus)
+
+6. **Metrics Dashboard:**
+   - Requirements documented
+   - Test cases executed
+   - Issues resolved
+   - Training sessions delivered
+
+7. **Support Needed** (from manager)
+
+Weekly Notes:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>🎯 Quick Reference: Role-Based Identities</h2>
+
+<table>
+    <tr>
+        <th>Task Type</th>
+        <th>Identity to Use</th>
+    </tr>
+    <tr>
+        <td>Requirements gathering</td>
+        <td>"Act as a Senior Business Systems Analyst with CRM expertise"</td>
+    </tr>
+    <tr>
+        <td>Salesforce configuration</td>
+        <td>"Act as a Certified Salesforce Administrator"</td>
+    </tr>
+    <tr>
+        <td>Data analysis</td>
+        <td>"Act as a CRM Data Analyst"</td>
+    </tr>
+    <tr>
+        <td>Process improvement</td>
+        <td>"Act as a Business Process Analyst specializing in CRM"</td>
+    </tr>
+    <tr>
+        <td>Training creation</td>
+        <td>"Act as a CRM Training Specialist"</td>
+    </tr>
+    <tr>
+        <td>Stakeholder communication</td>
+        <td>"Act as a Business Systems Analyst"</td>
+    </tr>
+    <tr>
+        <td>Testing</td>
+        <td>"Act as a QA Analyst for CRM systems"</td>
+    </tr>
+</table>
+
+<div class="tip-box">
+    <strong>💡 BSA-CRM Pro Tips:</strong>
+    <ul style="margin: 10px 0 0 0;">
+        <li>Always mention "regulated environment" or "FDA compliance" when relevant to get appropriate recommendations</li>
+        <li>Include "Salesforce" in prompts to get platform-specific advice</li>
+        <li>Ask for "SDLC documentation" format for formal deliverables</li>
+        <li>Request "change management considerations" for any system changes</li>
+    </ul>
+</div>
+
+<hr style="margin-top: 30px; border: 1px dashed #ccc;">
+<p style="text-align: center; color: #666; font-size: 9pt;">
+    BSA-CRM AI Prompts | Tailored for Business Systems Analyst - CRM Role | 2026
+</p>
+
+</body>
+</html>

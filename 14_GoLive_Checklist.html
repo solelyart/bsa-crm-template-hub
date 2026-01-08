@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Go-Live Checklist</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        .header-box { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px; }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .info-box { background: #f8f9fa; border-radius: 8px; padding: 15px; border-left: 4px solid #f5576c; text-align: center; }
+        .info-box label { font-weight: bold; color: #666; font-size: 9pt; display: block; }
+        .info-box .value { font-size: 12pt; margin-top: 5px; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #f5576c; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .section-header { background: #fce4ec; padding: 10px 15px; border-left: 4px solid #f5576c; margin: 20px 0 10px 0; font-weight: bold; font-size: 12pt; }
+        .checkbox { width: 18px; height: 18px; }
+        .status-complete { background: #d4edda; color: #155724; padding: 3px 8px; border-radius: 3px; }
+        .status-pending { background: #fff3cd; color: #856404; padding: 3px 8px; border-radius: 3px; }
+        .status-na { background: #e2e3e5; color: #383d41; padding: 3px 8px; border-radius: 3px; }
+        .critical { background: #f8d7da; border-left: 4px solid #dc3545; }
+        .warning-box { background: #fff3cd; border: 2px solid #ffc107; border-radius: 10px; padding: 15px; margin: 20px 0; }
+        .success-box { background: #d4edda; border: 2px solid #28a745; border-radius: 10px; padding: 15px; margin: 20px 0; }
+        .timeline { background: #f0f4ff; border-radius: 10px; padding: 20px; margin: 20px 0; }
+        .timeline-item { display: flex; margin: 10px 0; }
+        .timeline-time { width: 100px; font-weight: bold; color: #4472C4; }
+        .timeline-task { flex: 1; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>🚀 GO-LIVE CHECKLIST</h1>
+    <p>[Project/Release Name] | Target Date: [YYYY-MM-DD]</p>
+</div>
+
+<div class="info-grid">
+    <div class="info-box">
+        <label>Go-Live Date</label>
+        <div class="value">[Date]</div>
+    </div>
+    <div class="info-box">
+        <label>Go-Live Time</label>
+        <div class="value">[Time] [Timezone]</div>
+    </div>
+    <div class="info-box">
+        <label>Status</label>
+        <div class="value" style="color: #28a745;">GO / NO-GO</div>
+    </div>
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ GO/NO-GO DECISION:</strong> All items marked as CRITICAL must be complete before proceeding with go-live. Any incomplete critical items require escalation and sign-off from project sponsor.
+</div>
+
+<div class="section-header">📋 PRE-GO-LIVE CHECKLIST (T-7 Days)</div>
+<table>
+    <tr>
+        <th style="width: 5%;">✓</th>
+        <th style="width: 45%;">Task</th>
+        <th style="width: 15%;">Owner</th>
+        <th style="width: 12%;">Due</th>
+        <th style="width: 12%;">Status</th>
+        <th style="width: 11%;">Priority</th>
+    </tr>
+    <tr class="critical">
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>UAT sign-off obtained</td>
+        <td></td>
+        <td>T-7</td>
+        <td><span class="status-pending">Pending</span></td>
+        <td>CRITICAL</td>
+    </tr>
+    <tr class="critical">
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>All P1/P2 defects resolved</td>
+        <td></td>
+        <td>T-7</td>
+        <td></td>
+        <td>CRITICAL</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Training materials finalized</td>
+        <td></td>
+        <td>T-5</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>End-user training completed</td>
+        <td></td>
+        <td>T-3</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Communication plan finalized</td>
+        <td></td>
+        <td>T-5</td>
+        <td></td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Support team briefed</td>
+        <td></td>
+        <td>T-3</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+</table>
+
+<div class="section-header">🔧 TECHNICAL READINESS (T-3 Days)</div>
+<table>
+    <tr>
+        <th style="width: 5%;">✓</th>
+        <th style="width: 45%;">Task</th>
+        <th style="width: 15%;">Owner</th>
+        <th style="width: 12%;">Due</th>
+        <th style="width: 12%;">Status</th>
+        <th style="width: 11%;">Priority</th>
+    </tr>
+    <tr class="critical">
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Production deployment plan reviewed</td>
+        <td></td>
+        <td>T-3</td>
+        <td></td>
+        <td>CRITICAL</td>
+    </tr>
+    <tr class="critical">
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Rollback plan documented and tested</td>
+        <td></td>
+        <td>T-3</td>
+        <td></td>
+        <td>CRITICAL</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Data migration validated</td>
+        <td></td>
+        <td>T-2</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Integration points verified</td>
+        <td></td>
+        <td>T-2</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Performance testing completed</td>
+        <td></td>
+        <td>T-3</td>
+        <td></td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Security review completed</td>
+        <td></td>
+        <td>T-3</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+</table>
+
+<div class="section-header">📢 COMMUNICATION (T-1 Day)</div>
+<table>
+    <tr>
+        <th style="width: 5%;">✓</th>
+        <th style="width: 45%;">Task</th>
+        <th style="width: 15%;">Owner</th>
+        <th style="width: 12%;">Due</th>
+        <th style="width: 12%;">Status</th>
+        <th style="width: 11%;">Priority</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Go-live announcement sent to all users</td>
+        <td></td>
+        <td>T-1</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Quick reference guide distributed</td>
+        <td></td>
+        <td>T-1</td>
+        <td></td>
+        <td>Medium</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Support contact information shared</td>
+        <td></td>
+        <td>T-1</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Stakeholders notified of go-live time</td>
+        <td></td>
+        <td>T-1</td>
+        <td></td>
+        <td>High</td>
+    </tr>
+</table>
+
+<div class="section-header">🚀 GO-LIVE DAY (T-0)</div>
+<div class="timeline">
+    <h4 style="margin-top: 0;">Deployment Timeline</h4>
+    <div class="timeline-item">
+        <div class="timeline-time">[Time]</div>
+        <div class="timeline-task">☐ Begin deployment / change window</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-time">[Time]</div>
+        <div class="timeline-task">☐ Deploy changes to production</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-time">[Time]</div>
+        <div class="timeline-task">☐ Run smoke tests</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-time">[Time]</div>
+        <div class="timeline-task">☐ Verify integrations working</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-time">[Time]</div>
+        <div class="timeline-task">☐ Enable user access</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-time">[Time]</div>
+        <div class="timeline-task">☐ Send "Go-Live Complete" notification</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-time">[Time]</div>
+        <div class="timeline-task">☐ Begin hypercare support</div>
+    </div>
+</div>
+
+<div class="section-header">🛡️ POST-GO-LIVE (T+1 to T+7)</div>
+<table>
+    <tr>
+        <th style="width: 5%;">✓</th>
+        <th style="width: 50%;">Task</th>
+        <th style="width: 15%;">Owner</th>
+        <th style="width: 15%;">Due</th>
+        <th style="width: 15%;">Status</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Monitor system performance</td>
+        <td></td>
+        <td>T+1 to T+7</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Track and resolve user issues</td>
+        <td></td>
+        <td>T+1 to T+7</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Collect user feedback</td>
+        <td></td>
+        <td>T+3</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Conduct lessons learned session</td>
+        <td></td>
+        <td>T+7</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Update documentation with any changes</td>
+        <td></td>
+        <td>T+5</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>Close project / transition to BAU</td>
+        <td></td>
+        <td>T+7</td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">🔙 ROLLBACK PLAN</div>
+<table>
+    <tr>
+        <th style="width: 30%;">Trigger</th>
+        <th style="width: 70%;">Action</th>
+    </tr>
+    <tr>
+        <td>Critical functionality broken</td>
+        <td>[Describe rollback steps]</td>
+    </tr>
+    <tr>
+        <td>Data integrity issues</td>
+        <td>[Describe rollback steps]</td>
+    </tr>
+    <tr>
+        <td>Integration failures</td>
+        <td>[Describe rollback steps]</td>
+    </tr>
+    <tr>
+        <td>Rollback decision maker</td>
+        <td>[Name and contact]</td>
+    </tr>
+    <tr>
+        <td>Rollback window</td>
+        <td>[Time frame for rollback decision]</td>
+    </tr>
+</table>
+
+<div class="section-header">📞 KEY CONTACTS</div>
+<table>
+    <tr>
+        <th>Role</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+        <td>Project Lead</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Technical Lead</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Business Owner</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>IT Support</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="success-box">
+    <h3 style="margin-top: 0;">✅ GO-LIVE SIGN-OFF</h3>
+    <p><strong>Go-Live Decision:</strong> ☐ GO &nbsp;&nbsp; ☐ NO-GO &nbsp;&nbsp; ☐ CONDITIONAL GO</p>
+    <p><strong>Approved By:</strong> _________________ <strong>Date:</strong> _________________ <strong>Time:</strong> _________________</p>
+    <p><strong>Notes:</strong> _____________________________________________________________________________</p>
+</div>
+
+<hr style="margin-top: 30px;">
+<p style="color: #666; font-size: 9pt; text-align: center;">
+    Go-Live Checklist Template | 📊 PROJECTS Section | BSA-CRM OneNote Notebook
+</p>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Salesforce Knowledge Base</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        .header-box { background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px; }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        .section-header { background: #e0f7fa; padding: 10px 15px; border-left: 4px solid #00b4db; margin: 20px 0 10px 0; font-weight: bold; font-size: 12pt; }
+        .tip-box { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 10px 15px; margin: 10px 0; }
+        .warning-box { background: #fff3e0; border-left: 4px solid #ff9800; padding: 10px 15px; margin: 10px 0; }
+        .code-box { background: #263238; color: #aed581; padding: 15px; border-radius: 5px; font-family: Consolas, monospace; margin: 10px 0; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #00b4db; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .notes-area { background: #e0f2f1; border: 1px solid #80cbc4; border-radius: 5px; padding: 15px; min-height: 60px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>☁️ SALESFORCE KNOWLEDGE BASE</h1>
+    <p>Tips, Tricks & Best Practices</p>
+</div>
+
+<div class="section-header">🔧 COMMON FORMULAS</div>
+
+<p><strong>Calculate Age from Date:</strong></p>
+<div class="code-box">
+FLOOR((TODAY() - Date_Field__c) / 365.25)
+</div>
+
+<p><strong>Concatenate Name Fields:</strong></p>
+<div class="code-box">
+FirstName & " " & LastName
+</div>
+
+<p><strong>CASE Statement for Status:</strong></p>
+<div class="code-box">
+CASE(Status__c,
+  "New", "🔵 New",
+  "In Progress", "🟡 In Progress",
+  "Completed", "🟢 Completed",
+  "Unknown")
+</div>
+
+<p><strong>IF with ISBLANK:</strong></p>
+<div class="code-box">
+IF(ISBLANK(Field__c), "Not Set", Field__c)
+</div>
+
+<div class="section-header">📊 USEFUL REPORT TIPS</div>
+
+<div class="tip-box">
+    <strong>💡 Tip:</strong> Use "Row Limit" filter to create Top N reports (e.g., Top 10 Opportunities by Amount)
+</div>
+
+<table>
+    <tr>
+        <th>Report Type</th>
+        <th>Use Case</th>
+        <th>Key Filters</th>
+    </tr>
+    <tr>
+        <td>Opportunities with Products</td>
+        <td>Revenue by product line</td>
+        <td>Close Date, Stage</td>
+    </tr>
+    <tr>
+        <td>Accounts with Contacts</td>
+        <td>Contact coverage analysis</td>
+        <td>Account Type, Contact Role</td>
+    </tr>
+    <tr>
+        <td>Cases with Case History</td>
+        <td>Case aging analysis</td>
+        <td>Created Date, Status</td>
+    </tr>
+    <tr>
+        <td>Activities with Accounts</td>
+        <td>Activity tracking</td>
+        <td>Activity Date, Type</td>
+    </tr>
+</table>
+
+<div class="section-header">⚡ FLOW BEST PRACTICES</div>
+
+<div class="tip-box">
+    <strong>💡 Bulkification:</strong> Always use "Get Records" outside of loops. Store in a collection variable, then loop through the collection.
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ Warning:</strong> Avoid DML operations inside loops. Use "Add to Collection" then a single "Update Records" after the loop.
+</div>
+
+<table>
+    <tr>
+        <th>Flow Type</th>
+        <th>Best Use Case</th>
+        <th>Limitations</th>
+    </tr>
+    <tr>
+        <td>Record-Triggered Flow</td>
+        <td>Automation on record changes</td>
+        <td>5 per object recommended</td>
+    </tr>
+    <tr>
+        <td>Screen Flow</td>
+        <td>Guided user input</td>
+        <td>Cannot run in background</td>
+    </tr>
+    <tr>
+        <td>Schedule-Triggered Flow</td>
+        <td>Batch processing</td>
+        <td>250k records per batch</td>
+    </tr>
+    <tr>
+        <td>Platform Event-Triggered</td>
+        <td>Integration events</td>
+        <td>Async processing</td>
+    </tr>
+</table>
+
+<div class="section-header">🔐 SECURITY QUICK REFERENCE</div>
+
+<table>
+    <tr>
+        <th>Security Layer</th>
+        <th>Controls</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td>Profiles</td>
+        <td>Object CRUD, Field visibility</td>
+        <td>Base permissions for user type</td>
+    </tr>
+    <tr>
+        <td>Permission Sets</td>
+        <td>Additional permissions</td>
+        <td>Extend profile permissions</td>
+    </tr>
+    <tr>
+        <td>Permission Set Groups</td>
+        <td>Bundle permission sets</td>
+        <td>Role-based access</td>
+    </tr>
+    <tr>
+        <td>Sharing Rules</td>
+        <td>Record access</td>
+        <td>Extend OWD access</td>
+    </tr>
+    <tr>
+        <td>Role Hierarchy</td>
+        <td>Record visibility up hierarchy</td>
+        <td>Manager access to team data</td>
+    </tr>
+</table>
+
+<div class="section-header">🔗 USEFUL LINKS</div>
+
+<table>
+    <tr>
+        <th>Resource</th>
+        <th>URL</th>
+        <th>Use For</th>
+    </tr>
+    <tr>
+        <td>Salesforce Help</td>
+        <td>help.salesforce.com</td>
+        <td>Official documentation</td>
+    </tr>
+    <tr>
+        <td>Trailhead</td>
+        <td>trailhead.salesforce.com</td>
+        <td>Learning & certifications</td>
+    </tr>
+    <tr>
+        <td>Developer Docs</td>
+        <td>developer.salesforce.com</td>
+        <td>API & technical docs</td>
+    </tr>
+    <tr>
+        <td>Trust Status</td>
+        <td>trust.salesforce.com</td>
+        <td>System status & maintenance</td>
+    </tr>
+    <tr>
+        <td>Release Notes</td>
+        <td>releasenotes.docs.salesforce.com</td>
+        <td>New features</td>
+    </tr>
+</table>
+
+<div class="section-header">📝 MY NOTES & LEARNINGS</div>
+<div class="notes-area">
+    <p><strong>Things I've Learned:</strong></p>
+    <p>•</p>
+    <p>•</p>
+    <p><strong>Common Issues & Solutions:</strong></p>
+    <p>•</p>
+    <p>•</p>
+    <p><strong>Bookmarked Articles:</strong></p>
+    <p>•</p>
+</div>
+
+<hr style="margin-top: 30px;">
+<p style="color: #666; font-size: 9pt; text-align: center;">
+    Salesforce Knowledge Base | 📚 RESOURCES Section | BSA-CRM OneNote Notebook
+</p>
+
+</body>
+</html>

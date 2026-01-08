@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Prompt Cards</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; text-align: center; }
+        h2 { color: #4472C4; margin-top: 30px; border-left: 4px solid #4472C4; padding-left: 10px; }
+        .header-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 12px; text-align: center; margin-bottom: 25px; }
+        .header-box h1 { color: white; border: none; margin: 0; font-size: 22pt; }
+        .header-box p { margin: 10px 0 0 0; opacity: 0.9; }
+        .prompt-card { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-left: 5px solid #4472C4; }
+        .prompt-card.green { border-left-color: #28a745; }
+        .prompt-card.orange { border-left-color: #fd7e14; }
+        .prompt-card.purple { border-left-color: #6f42c1; }
+        .prompt-card.red { border-left-color: #dc3545; }
+        .prompt-card.teal { border-left-color: #20c997; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .card-title { font-weight: bold; font-size: 14pt; color: #333; }
+        .card-tag { background: #4472C4; color: white; padding: 3px 10px; border-radius: 15px; font-size: 9pt; }
+        .card-tag.green { background: #28a745; }
+        .card-tag.orange { background: #fd7e14; }
+        .card-tag.purple { background: #6f42c1; }
+        .card-tag.red { background: #dc3545; }
+        .card-tag.teal { background: #20c997; }
+        .prompt-box { background: #fff; border: 1px solid #dee2e6; border-radius: 5px; padding: 15px; margin: 10px 0; font-family: Consolas, monospace; font-size: 10pt; white-space: pre-wrap; }
+        .tip-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 15px; margin: 10px 0; font-size: 10pt; }
+        .tip-box strong { color: #856404; }
+        .use-case { color: #666; font-size: 10pt; margin-bottom: 10px; }
+        .quick-ref { background: #e3f2fd; border-radius: 8px; padding: 15px; margin: 20px 0; }
+        .quick-ref h3 { margin-top: 0; color: #1565c0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #4472C4; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>🤖 AI PROMPT CARDS</h1>
+    <p>Quick Reference for OneNote + AI Integration | Copy & Paste Ready</p>
+</div>
+
+<div class="quick-ref">
+    <h3>📋 Quick Start Guide</h3>
+    <p><strong>How to use:</strong> Copy any prompt below → Paste into ChatGPT/Copilot → Replace [bracketed text] with your content → Get instant results!</p>
+</div>
+
+<h2>📝 1. Brain Dump Organization</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Basic Structure Creator</span>
+        <span class="card-tag">Easy</span>
+    </div>
+    <p class="use-case">Use when: You have messy notes from a meeting or brainstorm</p>
+    <div class="prompt-box">I am pasting my raw notes from [Topic/Meeting]. Organize them into a structured OneNote page with clear headings, sub-headings, and a bulleted list of key takeaways. Ensure the formatting is ready for OneNote.
+
+[PASTE YOUR NOTES HERE]</div>
+    <div class="tip-box"><strong>💡 Pro Tip:</strong> Add "Include a 3-sentence executive summary at the top" for extra polish.</div>
+</div>
+
+<div class="prompt-card green">
+    <div class="card-header">
+        <span class="card-title">Professional Meeting Notes</span>
+        <span class="card-tag green">Recommended</span>
+    </div>
+    <p class="use-case">Use when: You need formal meeting documentation</p>
+    <div class="prompt-box">Act as an Executive Assistant. Transform these messy meeting notes into a professional document with:
+- Meeting header (date, attendees, purpose)
+- Agenda items discussed
+- Key discussion points under each agenda item
+- Decisions made
+- Action items with owners
+- Next steps
+
+Use OneNote-compatible formatting with clear headings.
+
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>✅ 2. Action Item Extraction</h2>
+
+<div class="prompt-card orange">
+    <div class="card-header">
+        <span class="card-title">Task Extractor</span>
+        <span class="card-tag orange">High Value</span>
+    </div>
+    <p class="use-case">Use when: You need to identify all tasks from meeting notes</p>
+    <div class="prompt-box">Analyze these notes and extract all actionable tasks. Format them as a checklist. For each task, suggest a deadline and categorize it by priority (High, Medium, Low).
+
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<div class="prompt-card orange">
+    <div class="card-header">
+        <span class="card-title">Comprehensive Action Items</span>
+        <span class="card-tag orange">Advanced</span>
+    </div>
+    <p class="use-case">Use when: You need detailed task breakdown with dependencies</p>
+    <div class="prompt-box">Act as a Project Manager. From the following meeting notes, extract:
+
+1. **Action Items Table:**
+   | Task | Owner | Deadline | Priority | Dependencies |
+
+2. **Decisions Made:**
+   - List each decision with the decision-maker
+
+3. **Follow-up Questions:**
+   - Items needing clarification
+
+4. **Parking Lot:**
+   - Topics deferred for future discussion
+
+Meeting Notes:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>📚 3. Study & Active Recall</h2>
+
+<div class="prompt-card purple">
+    <div class="card-header">
+        <span class="card-title">Quiz Generator</span>
+        <span class="card-tag purple">Study</span>
+    </div>
+    <p class="use-case">Use when: You want to test your knowledge on a topic</p>
+    <div class="prompt-box">Based on the text below, create 10 multiple-choice questions and 5 short-answer flashcards to help me study this material. Provide the answers at the very end so I can quiz myself first.
+
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<div class="prompt-card purple">
+    <div class="card-header">
+        <span class="card-title">Flashcard Creator with Mnemonics</span>
+        <span class="card-tag purple">Memory</span>
+    </div>
+    <p class="use-case">Use when: You need memorable flashcards for retention</p>
+    <div class="prompt-box">I'm studying [TOPIC]. Take the following notes and generate a set of 15 flashcards.
+
+For each flashcard:
+- Front: A clear, specific question
+- Back: A concise answer (1-3 sentences)
+- Mnemonic: A memory aid (acronym, story, or vivid image)
+
+Format as a table:
+| Front | Back | Mnemonic |
+
+Notes:
+[PASTE YOUR NOTES HERE]</div>
+</div>
+
+<h2>📊 4. Summarization</h2>
+
+<div class="prompt-card">
+    <div class="card-header">
+        <span class="card-title">Quick TL;DR</span>
+        <span class="card-tag">Fast</span>
+    </div>
+    <p class="use-case">Use when: You need a quick summary for busy stakeholders</p>
+    <div class="prompt-box">Summarize the following notes into a 3-sentence "Executive Summary" and 5 "Insights for Leadership." Use a professional yet concise tone.
+
+[PASTE YOUR CONTENT HERE]</div>
+</div>
+
+<div class="prompt-card green">
+    <div class="card-header">
+        <span class="card-title">Formal Executive Summary</span>
+        <span class="card-tag green">Leadership</span>
+    </div>
+    <p class="use-case">Use when: You're presenting to C-level executives</p>
+    <div class="prompt-box">You are a senior business analyst. Create an executive summary of this document for C-level executives:
+
+**Structure:**
+1. SITUATION (2-3 sentences: what's happening)
+2. KEY FINDINGS (3-5 bullet points with data)
+3. BUSINESS IMPACT (2-3 sentences: financial/strategic effect)
+4. RECOMMENDATIONS (3-4 specific actions with owners)
+5. NEXT STEPS (2-3 immediate actions within 30 days)
+
+Keep under 400 words. Use confident, direct language.
+
+Document:
+[PASTE YOUR CONTENT HERE]</div>
+</div>
+
+<h2>💡 5. Creative Expansion</h2>
+
+<div class="prompt-card teal">
+    <div class="card-header">
+        <span class="card-title">Bullet Point Expander</span>
+        <span class="card-tag teal">Creative</span>
+    </div>
+    <p class="use-case">Use when: You have brief notes that need detailed explanation</p>
+    <div class="prompt-box">I have a note titled "[TITLE]". Based on these brief bullet points, expand the content into a detailed explanation. Use an analogy that a 10-year-old would understand to explain the core concept.
+
+Bullet Points:
+[PASTE YOUR BULLETS HERE]</div>
+</div>
+
+<div class="prompt-card teal">
+    <div class="card-header">
+        <span class="card-title">Analogy Generator</span>
+        <span class="card-tag teal">Teaching</span>
+    </div>
+    <p class="use-case">Use when: You need to explain complex concepts simply</p>
+    <div class="prompt-box">I need to explain [CONCEPT] to [AUDIENCE]. Generate 5 different analogies:
+
+1. **Everyday Analogy** (household items)
+2. **Sports Analogy**
+3. **Food/Cooking Analogy**
+4. **Nature Analogy**
+5. **Technology Analogy**
+
+For each, explain how the analogy maps to the concept.
+
+Concept Description:
+[PASTE YOUR DESCRIPTION HERE]</div>
+</div>
+
+<h2>⚖️ 6. Decision Making</h2>
+
+<div class="prompt-card red">
+    <div class="card-header">
+        <span class="card-title">Decision Matrix Creator</span>
+        <span class="card-tag red">Strategic</span>
+    </div>
+    <p class="use-case">Use when: You're choosing between multiple options</p>
+    <div class="prompt-box">I need to decide between [Option A], [Option B], and [Option C] for [Decision Context].
+
+Create a decision matrix with:
+1. 5-7 relevant criteria for this decision
+2. Weight each criterion (total = 100%)
+3. Score each option (1-10) on each criterion
+4. Calculate weighted scores
+5. Provide a recommendation with rationale
+
+Context:
+[DESCRIBE THE DECISION AND ANY CONSTRAINTS]</div>
+    <div class="tip-box"><strong>💡 Pro Tip:</strong> Ask for a "sensitivity analysis" to see how changing weights affects the outcome.</div>
+</div>
+
+<h2>🔧 Best Practices Quick Reference</h2>
+
+<table>
+    <tr>
+        <th>Technique</th>
+        <th>Example</th>
+        <th>When to Use</th>
+    </tr>
+    <tr>
+        <td><strong>Role Assignment</strong></td>
+        <td>"Act as a Project Manager..."</td>
+        <td>Always - improves output quality</td>
+    </tr>
+    <tr>
+        <td><strong>Format Specification</strong></td>
+        <td>"Use a table with columns for..."</td>
+        <td>When you need specific structure</td>
+    </tr>
+    <tr>
+        <td><strong>Length Control</strong></td>
+        <td>"Keep under 200 words"</td>
+        <td>For summaries and briefs</td>
+    </tr>
+    <tr>
+        <td><strong>Iteration</strong></td>
+        <td>"Make it more concise"</td>
+        <td>When first output isn't right</td>
+    </tr>
+    <tr>
+        <td><strong>Audience Targeting</strong></td>
+        <td>"For a non-technical audience"</td>
+        <td>When sharing with others</td>
+    </tr>
+</table>
+
+<h2>🔄 Iteration Prompts</h2>
+
+<div class="quick-ref">
+    <h3>Quick Fixes</h3>
+    <table style="margin: 0;">
+        <tr>
+            <td><strong>Too long:</strong></td>
+            <td>"Shorten this to under 100 words"</td>
+        </tr>
+        <tr>
+            <td><strong>Too formal:</strong></td>
+            <td>"Make it more conversational"</td>
+        </tr>
+        <tr>
+            <td><strong>Too simple:</strong></td>
+            <td>"Add more technical detail"</td>
+        </tr>
+        <tr>
+            <td><strong>Missing examples:</strong></td>
+            <td>"Add 3 real-world examples"</td>
+        </tr>
+        <tr>
+            <td><strong>Wrong tone:</strong></td>
+            <td>"Make it more supportive/professional"</td>
+        </tr>
+        <tr>
+            <td><strong>Need structure:</strong></td>
+            <td>"Format as a numbered list"</td>
+        </tr>
+    </table>
+</div>
+
+<hr style="margin-top: 30px; border: 1px dashed #ccc;">
+<p style="text-align: center; color: #666; font-size: 9pt;">
+    AI Prompt Cards for OneNote | Version 2026.1 | Copy prompts directly into ChatGPT, Copilot, or Claude
+</p>
+
+</body>
+</html>

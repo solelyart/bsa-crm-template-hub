@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Documentation</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        .header-box { background: linear-gradient(135deg, #434343 0%, #000000 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px; }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        .section-header { background: #eceff1; padding: 10px 15px; border-left: 4px solid #607d8b; margin: 20px 0 10px 0; font-weight: bold; font-size: 12pt; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #607d8b; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .notes-area { background: #fafafa; border: 1px solid #cfd8dc; border-radius: 5px; padding: 15px; min-height: 80px; margin: 10px 0; }
+        .diagram-box { background: #f5f5f5; border: 2px dashed #bdbdbd; border-radius: 8px; padding: 40px; text-align: center; margin: 15px 0; color: #757575; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>📐 TECHNICAL DOCUMENTATION</h1>
+    <p>System Architecture & Integration Reference</p>
+</div>
+
+<div class="section-header">🏗️ SYSTEM ARCHITECTURE OVERVIEW</div>
+<div class="diagram-box">
+    [Insert System Architecture Diagram Here]<br>
+    <small>Paste screenshot or draw diagram showing system connections</small>
+</div>
+
+<div class="section-header">🔌 INTEGRATION ARCHITECTURE</div>
+<table>
+    <tr>
+        <th style="width: 15%;">System</th>
+        <th style="width: 15%;">Integration Type</th>
+        <th style="width: 15%;">Protocol</th>
+        <th style="width: 15%;">Auth Method</th>
+        <th style="width: 25%;">Endpoint</th>
+        <th style="width: 15%;">Owner</th>
+    </tr>
+    <tr>
+        <td>ERP System</td>
+        <td>Real-time</td>
+        <td>REST API</td>
+        <td>OAuth 2.0</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Marketing Platform</td>
+        <td>Batch</td>
+        <td>SFTP</td>
+        <td>SSH Key</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Data Warehouse</td>
+        <td>Scheduled</td>
+        <td>JDBC</td>
+        <td>Username/Pwd</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📊 DATA MODEL</div>
+<table>
+    <tr>
+        <th>Object</th>
+        <th>Type</th>
+        <th>Key Fields</th>
+        <th>Relationships</th>
+        <th>Notes</th>
+    </tr>
+    <tr>
+        <td>Account</td>
+        <td>Standard</td>
+        <td></td>
+        <td>Parent Account, Contacts</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Contact</td>
+        <td>Standard</td>
+        <td></td>
+        <td>Account (Lookup)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Opportunity</td>
+        <td>Standard</td>
+        <td></td>
+        <td>Account (Lookup)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>[Custom Object]</td>
+        <td>Custom</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">⚙️ AUTOMATION INVENTORY</div>
+<table>
+    <tr>
+        <th style="width: 20%;">Name</th>
+        <th style="width: 12%;">Type</th>
+        <th style="width: 15%;">Object</th>
+        <th style="width: 15%;">Trigger</th>
+        <th style="width: 25%;">Description</th>
+        <th style="width: 13%;">Status</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Flow</td>
+        <td>Account</td>
+        <td>After Create</td>
+        <td></td>
+        <td>Active</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Flow</td>
+        <td>Opportunity</td>
+        <td>After Update</td>
+        <td></td>
+        <td>Active</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Apex Trigger</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Scheduled Job</td>
+        <td></td>
+        <td>Daily</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p><strong>Types:</strong> Flow | Process Builder | Workflow Rule | Apex Trigger | Scheduled Job | Validation Rule</p>
+
+<div class="section-header">🔐 SECURITY ARCHITECTURE</div>
+<table>
+    <tr>
+        <th>Profile</th>
+        <th>User Type</th>
+        <th>License</th>
+        <th>Key Permissions</th>
+    </tr>
+    <tr>
+        <td>Sales User</td>
+        <td>Sales Reps</td>
+        <td>Sales Cloud</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Marketing User</td>
+        <td>Marketing Team</td>
+        <td>Marketing Cloud</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Service User</td>
+        <td>Support Team</td>
+        <td>Service Cloud</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>System Admin</td>
+        <td>Admins</td>
+        <td>Platform</td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">🌐 ENVIRONMENT DETAILS</div>
+<table>
+    <tr>
+        <th>Environment</th>
+        <th>Type</th>
+        <th>URL</th>
+        <th>Purpose</th>
+        <th>Refresh Schedule</th>
+    </tr>
+    <tr>
+        <td>Production</td>
+        <td>Production</td>
+        <td></td>
+        <td>Live system</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td>Full Sandbox</td>
+        <td>Full Copy</td>
+        <td></td>
+        <td>UAT / Staging</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Dev Sandbox</td>
+        <td>Developer</td>
+        <td></td>
+        <td>Development</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>QA Sandbox</td>
+        <td>Partial Copy</td>
+        <td></td>
+        <td>Testing</td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📝 TECHNICAL NOTES</div>
+<div class="notes-area">
+    <p><strong>Known Technical Debt:</strong></p>
+    <p>•</p>
+    <p><strong>Upcoming Technical Changes:</strong></p>
+    <p>•</p>
+    <p><strong>Important Considerations:</strong></p>
+    <p>•</p>
+</div>
+
+<hr style="margin-top: 30px;">
+<p style="color: #666; font-size: 9pt; text-align: center;">
+    Technical Documentation | 📚 RESOURCES Section | BSA-CRM OneNote Notebook
+</p>
+
+</body>
+</html>

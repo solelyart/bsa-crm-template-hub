@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly Performance Pulse</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 800px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; text-align: center; }
+        h2 { color: #4472C4; margin-top: 25px; border-left: 4px solid #4472C4; padding-left: 10px; }
+        .header-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 20px; }
+        .scorecard { display: flex; justify-content: space-around; margin: 20px 0; }
+        .score-box { background: #f8f9fa; border: 2px solid #dee2e6; border-radius: 8px; padding: 15px 25px; text-align: center; min-width: 120px; }
+        .score-box .number { font-size: 28pt; font-weight: bold; color: #2E5090; }
+        .score-box .label { font-size: 10pt; color: #666; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #4472C4; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .checkbox { width: 18px; height: 18px; border: 2px solid #4472C4; display: inline-block; margin-right: 8px; vertical-align: middle; }
+        .section { background: #f8f9fa; border-radius: 8px; padding: 15px; margin: 15px 0; }
+        .priority-item { padding: 8px 0; border-bottom: 1px dashed #dee2e6; }
+        .emoji { font-size: 14pt; margin-right: 8px; }
+        .notes-area { background: #fffbcc; border: 1px solid #e6d800; border-radius: 5px; padding: 15px; min-height: 80px; margin-top: 10px; }
+        .status-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 9pt; margin-left: 10px; }
+        .on-track { background: #d4edda; color: #155724; }
+        .at-risk { background: #fff3cd; color: #856404; }
+        .behind { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1 style="color: white; border: none; margin: 0;">📊 WEEKLY PERFORMANCE PULSE</h1>
+    <p style="margin: 10px 0 0 0;">Week [##] | [Start Date] - [End Date]</p>
+</div>
+
+<h2>📈 Weekly Scorecard</h2>
+<table>
+    <tr>
+        <th style="width: 25%;">Tasks Completed</th>
+        <th style="width: 25%;">On-Time Rate</th>
+        <th style="width: 25%;">Trainings</th>
+        <th style="width: 25%;">Improvements</th>
+    </tr>
+    <tr style="text-align: center; font-size: 18pt; font-weight: bold; color: #2E5090;">
+        <td>[##]</td>
+        <td>[##%]</td>
+        <td>[##]</td>
+        <td>[##]</td>
+    </tr>
+</table>
+
+<h2>📌 Top Priorities This Week</h2>
+<div class="section">
+    <div class="priority-item"><span class="checkbox">☐</span> 1. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 2. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 3. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 4. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 5. ________________________________________________</div>
+</div>
+
+<h2>✅ Key Wins This Week</h2>
+<div class="section">
+    <table>
+        <tr>
+            <th style="width: 60%;">Win / Achievement</th>
+            <th style="width: 40%;">Impact</th>
+        </tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+    </table>
+</div>
+
+<h2>⚠️ Challenges & Blockers</h2>
+<div class="section">
+    <table>
+        <tr>
+            <th style="width: 40%;">Challenge</th>
+            <th style="width: 15%;">Impact</th>
+            <th style="width: 30%;">Action Needed</th>
+            <th style="width: 15%;">Owner</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">☐H ☐M ☐L</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: center;">☐H ☐M ☐L</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<h2>🆘 Support Needed from Manager</h2>
+<div class="section">
+    <table>
+        <tr>
+            <th style="width: 60%;">Request</th>
+            <th style="width: 20%;">Priority</th>
+            <th style="width: 20%;">Context</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>☐Urgent ☐High ☐Med ☐Low</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>☐Urgent ☐High ☐Med ☐Low</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<h2>🔜 Next Week Preview</h2>
+<div class="section">
+    <div class="priority-item"><span class="checkbox">☐</span> 1. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 2. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 3. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 4. ________________________________________________</div>
+    <div class="priority-item"><span class="checkbox">☐</span> 5. ________________________________________________</div>
+</div>
+
+<h2>🎯 OKR Progress Check</h2>
+<table>
+    <tr>
+        <th style="width: 50%;">Objective</th>
+        <th style="width: 20%;">This Week</th>
+        <th style="width: 15%;">Total</th>
+        <th style="width: 15%;">Status</th>
+    </tr>
+    <tr>
+        <td>O1: CRM Analysis Excellence</td>
+        <td></td>
+        <td></td>
+        <td><span class="status-tag on-track">On Track</span></td>
+    </tr>
+    <tr>
+        <td>O2: System Delivery Quality</td>
+        <td></td>
+        <td></td>
+        <td><span class="status-tag on-track">On Track</span></td>
+    </tr>
+    <tr>
+        <td>O3: Data & Reporting</td>
+        <td></td>
+        <td></td>
+        <td><span class="status-tag on-track">On Track</span></td>
+    </tr>
+    <tr>
+        <td>O4: User Training Success</td>
+        <td></td>
+        <td></td>
+        <td><span class="status-tag on-track">On Track</span></td>
+    </tr>
+    <tr>
+        <td>O5: Strategic Roadmap</td>
+        <td></td>
+        <td></td>
+        <td><span class="status-tag on-track">On Track</span></td>
+    </tr>
+    <tr>
+        <td>O6: Professional Development</td>
+        <td></td>
+        <td></td>
+        <td><span class="status-tag on-track">On Track</span></td>
+    </tr>
+</table>
+
+<h2>💭 Weekly Reflection</h2>
+<div class="section">
+    <p><strong>What went well this week?</strong></p>
+    <div class="notes-area"></div>
+    
+    <p style="margin-top: 15px;"><strong>What could be improved?</strong></p>
+    <div class="notes-area"></div>
+    
+    <p style="margin-top: 15px;"><strong>Key learning or insight:</strong></p>
+    <div class="notes-area"></div>
+</div>
+
+<h2>📝 Notes for Manager</h2>
+<div class="notes-area" style="min-height: 100px;"></div>
+
+<hr style="margin-top: 30px; border: 1px dashed #ccc;">
+<p style="text-align: center; color: #666; font-size: 9pt;">
+    Completed By: _________________ | Date: _________________ | Manager Review: _________________
+</p>
+
+</body>
+</html>

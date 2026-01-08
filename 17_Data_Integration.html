@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Data Integration</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        .header-box { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #fa709a; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .section-header { background: #fce4ec; padding: 10px 15px; border-left: 4px solid #fa709a; margin: 20px 0 10px 0; font-weight: bold; font-size: 12pt; }
+        .notes-area { background: #fff8e1; border: 1px solid #ffecb3; border-radius: 5px; padding: 15px; min-height: 60px; margin: 10px 0; }
+        .status-active { background: #d4edda; color: #155724; padding: 3px 8px; border-radius: 3px; }
+        .status-inactive { background: #f8d7da; color: #721c24; padding: 3px 8px; border-radius: 3px; }
+        .status-dev { background: #fff3cd; color: #856404; padding: 3px 8px; border-radius: 3px; }
+        .health-good { color: #28a745; font-weight: bold; }
+        .health-warning { color: #ffc107; font-weight: bold; }
+        .health-error { color: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>🔗 DATA INTEGRATION</h1>
+    <p>Integration Status & Data Quality Monitoring</p>
+</div>
+
+<div class="section-header">🔌 ACTIVE INTEGRATIONS</div>
+<table>
+    <tr>
+        <th style="width: 18%;">Integration</th>
+        <th style="width: 15%;">Source</th>
+        <th style="width: 15%;">Target</th>
+        <th style="width: 12%;">Direction</th>
+        <th style="width: 12%;">Frequency</th>
+        <th style="width: 13%;">Status</th>
+        <th style="width: 15%;">Last Sync</th>
+    </tr>
+    <tr>
+        <td>[Integration Name]</td>
+        <td>ERP</td>
+        <td>Salesforce</td>
+        <td>→ One-way</td>
+        <td>Real-time</td>
+        <td><span class="status-active">Active</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Marketing</td>
+        <td>Salesforce</td>
+        <td>↔ Bi-directional</td>
+        <td>Hourly</td>
+        <td><span class="status-active">Active</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Salesforce</td>
+        <td>Data Warehouse</td>
+        <td>→ One-way</td>
+        <td>Daily</td>
+        <td><span class="status-dev">In Dev</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📊 INTEGRATION HEALTH DASHBOARD</div>
+<table>
+    <tr>
+        <th>Integration</th>
+        <th>Records Today</th>
+        <th>Success Rate</th>
+        <th>Errors</th>
+        <th>Avg Latency</th>
+        <th>Health</th>
+    </tr>
+    <tr>
+        <td>[Integration 1]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="health-good">✓ Healthy</td>
+    </tr>
+    <tr>
+        <td>[Integration 2]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="health-warning">⚠ Warning</td>
+    </tr>
+    <tr>
+        <td>[Integration 3]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="health-error">✗ Error</td>
+    </tr>
+</table>
+
+<div class="section-header">🐛 ERROR LOG</div>
+<table>
+    <tr>
+        <th style="width: 12%;">Date/Time</th>
+        <th style="width: 15%;">Integration</th>
+        <th style="width: 35%;">Error Message</th>
+        <th style="width: 13%;">Records Affected</th>
+        <th style="width: 12%;">Status</th>
+        <th style="width: 13%;">Resolution</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Open</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Resolved</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📋 DATA MAPPING REFERENCE</div>
+<table>
+    <tr>
+        <th style="width: 20%;">Source System</th>
+        <th style="width: 20%;">Source Field</th>
+        <th style="width: 20%;">Target Object</th>
+        <th style="width: 20%;">Target Field</th>
+        <th style="width: 20%;">Transformation</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Account</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Contact</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Opportunity</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📈 DATA QUALITY METRICS</div>
+<table>
+    <tr>
+        <th>Object</th>
+        <th>Total Records</th>
+        <th>Completeness</th>
+        <th>Duplicates</th>
+        <th>Data Quality Score</th>
+    </tr>
+    <tr>
+        <td>Account</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Contact</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Lead</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Opportunity</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">🔄 DATA MIGRATION HISTORY</div>
+<table>
+    <tr>
+        <th style="width: 12%;">Date</th>
+        <th style="width: 20%;">Migration</th>
+        <th style="width: 15%;">Records</th>
+        <th style="width: 13%;">Success Rate</th>
+        <th style="width: 25%;">Notes</th>
+        <th style="width: 15%;">Performed By</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📝 INTEGRATION NOTES</div>
+<div class="notes-area">
+    <p><strong>Upcoming Changes:</strong></p>
+    <p>•</p>
+    <p><strong>Known Issues:</strong></p>
+    <p>•</p>
+    <p><strong>Contacts:</strong></p>
+    <p>•</p>
+</div>
+
+<hr style="margin-top: 30px;">
+<p style="color: #666; font-size: 9pt; text-align: center;">
+    Data Integration Template | 🔄 AREAS Section | BSA-CRM OneNote Notebook
+</p>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sprint Tracker</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 900px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        h2 { color: #4472C4; margin-top: 25px; }
+        .header-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px; }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        .sprint-info { background: #f0f4ff; border-radius: 8px; padding: 15px; margin: 15px 0; display: flex; justify-content: space-between; flex-wrap: wrap; }
+        .sprint-stat { text-align: center; padding: 10px 20px; }
+        .sprint-stat .number { font-size: 24pt; font-weight: bold; color: #4472C4; }
+        .sprint-stat .label { font-size: 9pt; color: #666; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #4472C4; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .status-todo { background: #e9ecef; color: #495057; padding: 3px 8px; border-radius: 3px; }
+        .status-progress { background: #fff3cd; color: #856404; padding: 3px 8px; border-radius: 3px; }
+        .status-done { background: #d4edda; color: #155724; padding: 3px 8px; border-radius: 3px; }
+        .status-blocked { background: #f8d7da; color: #721c24; padding: 3px 8px; border-radius: 3px; }
+        .burndown { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .section-header { background: #e8f4fd; padding: 10px 15px; border-left: 4px solid #4472C4; margin: 20px 0 10px 0; font-weight: bold; }
+        .checkbox { width: 18px; height: 18px; }
+        .notes-area { background: #fffef0; border: 1px solid #ffeeba; border-radius: 5px; padding: 15px; min-height: 80px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>🏃 SPRINT TRACKER</h1>
+    <p>Sprint [##] | [Start Date] - [End Date]</p>
+</div>
+
+<div class="sprint-info">
+    <div class="sprint-stat">
+        <div class="number">[##]</div>
+        <div class="label">Total Items</div>
+    </div>
+    <div class="sprint-stat">
+        <div class="number">[##]</div>
+        <div class="label">Completed</div>
+    </div>
+    <div class="sprint-stat">
+        <div class="number">[##]</div>
+        <div class="label">In Progress</div>
+    </div>
+    <div class="sprint-stat">
+        <div class="number">[##]</div>
+        <div class="label">Blocked</div>
+    </div>
+    <div class="sprint-stat">
+        <div class="number">[##%]</div>
+        <div class="label">Complete</div>
+    </div>
+</div>
+
+<div class="section-header">📋 SPRINT GOAL</div>
+<div class="notes-area">
+    [What is the main objective of this sprint?]
+</div>
+
+<div class="section-header">📝 SPRINT BACKLOG</div>
+<table>
+    <tr>
+        <th style="width: 5%;">✓</th>
+        <th style="width: 8%;">ID</th>
+        <th style="width: 35%;">Item / User Story</th>
+        <th style="width: 12%;">Points</th>
+        <th style="width: 12%;">Owner</th>
+        <th style="width: 13%;">Status</th>
+        <th style="width: 15%;">Notes</th>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>US-001</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="status-todo">To Do</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>US-002</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="status-todo">To Do</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>US-003</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="status-progress">In Progress</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>US-004</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="status-done">Done</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td>US-005</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span class="status-blocked">Blocked</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="checkbox"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<p><strong>Status Options:</strong> To Do | In Progress | Done | Blocked | Deferred</p>
+
+<div class="section-header">🚧 BLOCKERS & IMPEDIMENTS</div>
+<table>
+    <tr>
+        <th style="width: 40%;">Blocker</th>
+        <th style="width: 25%;">Affected Item(s)</th>
+        <th style="width: 20%;">Owner</th>
+        <th style="width: 15%;">Resolution</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">📊 DAILY STANDUP NOTES</div>
+<table>
+    <tr>
+        <th style="width: 12%;">Date</th>
+        <th style="width: 30%;">Yesterday</th>
+        <th style="width: 30%;">Today</th>
+        <th style="width: 28%;">Blockers</th>
+    </tr>
+    <tr>
+        <td>[Date]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>[Date]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>[Date]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>[Date]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>[Date]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<div class="section-header">🔄 SPRINT RETROSPECTIVE</div>
+<table>
+    <tr>
+        <th style="width: 33%; background: #28a745;">✅ What Went Well</th>
+        <th style="width: 34%; background: #ffc107; color: #333;">⚠️ What Could Improve</th>
+        <th style="width: 33%; background: #17a2b8;">💡 Action Items</th>
+    </tr>
+    <tr>
+        <td style="vertical-align: top; min-height: 100px;">
+            •<br>•<br>•
+        </td>
+        <td style="vertical-align: top;">
+            •<br>•<br>•
+        </td>
+        <td style="vertical-align: top;">
+            •<br>•<br>•
+        </td>
+    </tr>
+</table>
+
+<div class="section-header">📈 VELOCITY TRACKING</div>
+<table>
+    <tr>
+        <th>Sprint</th>
+        <th>Planned Points</th>
+        <th>Completed Points</th>
+        <th>Velocity</th>
+    </tr>
+    <tr>
+        <td>Sprint [N-2]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Sprint [N-1]</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Current Sprint</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<hr style="margin-top: 30px;">
+<p style="color: #666; font-size: 9pt; text-align: center;">
+    Sprint Tracker Template | 📊 PROJECTS Section | BSA-CRM OneNote Notebook
+</p>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Review</title>
+    <style>
+        body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; padding: 20px; max-width: 800px; }
+        h1 { color: #2E5090; border-bottom: 3px solid #2E5090; padding-bottom: 10px; }
+        h2 { color: #4472C4; margin-top: 25px; border-left: 4px solid #4472C4; padding-left: 10px; }
+        .header-box { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px; }
+        .header-box h1 { color: white; border: none; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #4472C4; color: white; padding: 10px; text-align: left; }
+        td { border: 1px solid #dee2e6; padding: 8px; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .section { background: #f8f9fa; border-radius: 8px; padding: 15px; margin: 15px 0; }
+        .notes-area { background: #fffbcc; border: 1px solid #e6d800; border-radius: 5px; padding: 15px; min-height: 60px; margin-top: 10px; }
+        .achievement-box { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 15px; margin: 10px 0; }
+        .kpi-met { background: #d4edda; color: #155724; text-align: center; }
+        .kpi-missed { background: #f8d7da; color: #721c24; text-align: center; }
+        .progress-bar { background: #e9ecef; border-radius: 10px; height: 20px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #4472C4, #667eea); height: 100%; border-radius: 10px; }
+        .summary-box { background: #e3f2fd; border: 2px solid #2196f3; border-radius: 8px; padding: 20px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>📊 MONTHLY REVIEW</h1>
+    <p style="margin: 10px 0 0 0; font-size: 14pt;">[Month] 2026</p>
+</div>
+
+<div class="summary-box">
+    <h3 style="margin-top: 0; color: #1565c0;">Executive Summary</h3>
+    <p><strong>Overall Performance:</strong> ☐ Exceeds ☐ Meets ☐ Below Expectations</p>
+    <p><strong>Key Highlight:</strong></p>
+    <div style="min-height: 40px;"></div>
+</div>
+
+<h2>📈 Monthly KPI Scorecard</h2>
+<table>
+    <tr>
+        <th style="width: 35%;">KPI</th>
+        <th style="width: 15%;">Target</th>
+        <th style="width: 15%;">Actual</th>
+        <th style="width: 15%;">Variance</th>
+        <th style="width: 20%;">Status</th>
+    </tr>
+    <tr>
+        <td>Tasks Completed</td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td class="kpi-met">☐ Met ☐ Missed</td>
+    </tr>
+    <tr>
+        <td>On-Time Delivery Rate</td>
+        <td style="text-align: center;">95%</td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td class="kpi-met">☐ Met ☐ Missed</td>
+    </tr>
+    <tr>
+        <td>Training Sessions Delivered</td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td class="kpi-met">☐ Met ☐ Missed</td>
+    </tr>
+    <tr>
+        <td>Process Improvements</td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td class="kpi-met">☐ Met ☐ Missed</td>
+    </tr>
+    <tr>
+        <td>Stakeholder Satisfaction</td>
+        <td style="text-align: center;">4.5/5</td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td class="kpi-met">☐ Met ☐ Missed</td>
+    </tr>
+    <tr>
+        <td>UAT First-Pass Rate</td>
+        <td style="text-align: center;">95%</td>
+        <td style="text-align: center;"></td>
+        <td style="text-align: center;"></td>
+        <td class="kpi-met">☐ Met ☐ Missed</td>
+    </tr>
+</table>
+
+<h2>🏆 Top Achievements This Month</h2>
+<div class="achievement-box">
+    <p><strong>Achievement 1:</strong></p>
+    <div style="min-height: 30px;"></div>
+    <p><strong>Impact:</strong></p>
+    <div style="min-height: 30px;"></div>
+</div>
+<div class="achievement-box">
+    <p><strong>Achievement 2:</strong></p>
+    <div style="min-height: 30px;"></div>
+    <p><strong>Impact:</strong></p>
+    <div style="min-height: 30px;"></div>
+</div>
+<div class="achievement-box">
+    <p><strong>Achievement 3:</strong></p>
+    <div style="min-height: 30px;"></div>
+    <p><strong>Impact:</strong></p>
+    <div style="min-height: 30px;"></div>
+</div>
+
+<h2>🎯 OKR Progress</h2>
+<table>
+    <tr>
+        <th style="width: 40%;">Objective</th>
+        <th style="width: 15%;">Progress</th>
+        <th style="width: 30%;">Progress Bar</th>
+        <th style="width: 15%;">Status</th>
+    </tr>
+    <tr>
+        <td>O1: CRM Analysis Excellence</td>
+        <td style="text-align: center;">[##%]</td>
+        <td>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+        </td>
+        <td style="text-align: center;">On Track</td>
+    </tr>
+    <tr>
+        <td>O2: System Delivery Quality</td>
+        <td style="text-align: center;">[##%]</td>
+        <td>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+        </td>
+        <td style="text-align: center;">On Track</td>
+    </tr>
+    <tr>
+        <td>O3: Data & Reporting</td>
+        <td style="text-align: center;">[##%]</td>
+        <td>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+        </td>
+        <td style="text-align: center;">At Risk</td>
+    </tr>
+    <tr>
+        <td>O4: User Training Success</td>
+        <td style="text-align: center;">[##%]</td>
+        <td>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%;"></div>
+            </div>
+        </td>
+        <td style="text-align: center;">On Track</td>
+    </tr>
+    <tr>
+        <td>O5: Strategic Roadmap</td>
+        <td style="text-align: center;">[##%]</td>
+        <td>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+        </td>
+        <td style="text-align: center;">On Track</td>
+    </tr>
+    <tr>
+        <td>O6: Professional Development</td>
+        <td style="text-align: center;">[##%]</td>
+        <td>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%;"></div>
+            </div>
+        </td>
+        <td style="text-align: center;">On Track</td>
+    </tr>
+</table>
+
+<h2>📋 Projects Status Summary</h2>
+<table>
+    <tr>
+        <th style="width: 35%;">Project</th>
+        <th style="width: 15%;">Status</th>
+        <th style="width: 15%;">% Complete</th>
+        <th style="width: 35%;">Notes</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td>☐ On Track ☐ At Risk ☐ Done</td>
+        <td style="text-align: center;"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>☐ On Track ☐ At Risk ☐ Done</td>
+        <td style="text-align: center;"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>☐ On Track ☐ At Risk ☐ Done</td>
+        <td style="text-align: center;"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>☐ On Track ☐ At Risk ☐ Done</td>
+        <td style="text-align: center;"></td>
+        <td></td>
+    </tr>
+</table>
+
+<h2>📚 Training & Development</h2>
+<table>
+    <tr>
+        <th style="width: 40%;">Training/Certification</th>
+        <th style="width: 20%;">Date</th>
+        <th style="width: 20%;">Status</th>
+        <th style="width: 20%;">Hours</th>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>☐ Completed ☐ In Progress</td>
+        <td style="text-align: center;"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>☐ Completed ☐ In Progress</td>
+        <td style="text-align: center;"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>☐ Completed ☐ In Progress</td>
+        <td style="text-align: center;"></td>
+    </tr>
+</table>
+
+<h2>🔍 Lessons Learned</h2>
+<div class="section">
+    <p><strong>What went well this month:</strong></p>
+    <div class="notes-area" style="background: #e8f5e9;"></div>
+    
+    <p style="margin-top: 15px;"><strong>What could be improved:</strong></p>
+    <div class="notes-area" style="background: #fff3e0;"></div>
+    
+    <p style="margin-top: 15px;"><strong>Key insight or learning:</strong></p>
+    <div class="notes-area" style="background: #e3f2fd;"></div>
+</div>
+
+<h2>🎯 Next Month Priorities</h2>
+<div class="section">
+    <table>
+        <tr>
+            <th style="width: 5%;">#</th>
+            <th style="width: 55%;">Priority</th>
+            <th style="width: 20%;">Target</th>
+            <th style="width: 20%;">Linked OKR</th>
+        </tr>
+        <tr>
+            <td style="text-align: center;">1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">4</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">5</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<h2>📝 Notes for Annual Review</h2>
+<div class="notes-area" style="min-height: 100px;">
+    <p><em>Key points to remember for year-end performance review...</em></p>
+</div>
+
+<hr style="margin-top: 30px; border: 1px dashed #ccc;">
+<p style="text-align: center; color: #666; font-size: 9pt;">
+    Review Completed: _________________ | Manager Discussed: ☐ Yes ☐ Pending
+</p>
+
+</body>
+</html>
