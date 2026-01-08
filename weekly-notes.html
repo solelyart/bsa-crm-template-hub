@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Notes & Updates - BSA-CRM Template Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: #764ba2;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+        }
+        
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Weekly Notes Section */
+        .weekly-notes {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section-header h2 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .week-selector {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .week-selector select {
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: none;
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 184, 148, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Note Entry Form */
+        .note-form {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: none;
+        }
+        
+        .note-form.active {
+            display: block;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        /* Notes List */
+        .notes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .note-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .note-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .note-card.type-update {
+            border-left-color: #00b894;
+        }
+        
+        .note-card.type-file {
+            border-left-color: #fdcb6e;
+        }
+        
+        .note-card.type-message {
+            border-left-color: #74b9ff;
+        }
+        
+        .note-card.type-action {
+            border-left-color: #e17055;
+        }
+        
+        .note-card.type-decision {
+            border-left-color: #a29bfe;
+        }
+        
+        .note-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .note-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .note-meta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .note-type {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .type-update .note-type { background: rgba(0, 184, 148, 0.2); color: #00b894; }
+        .type-file .note-type { background: rgba(253, 203, 110, 0.2); color: #fdcb6e; }
+        .type-message .note-type { background: rgba(116, 185, 255, 0.2); color: #74b9ff; }
+        .type-action .note-type { background: rgba(225, 112, 85, 0.2); color: #e17055; }
+        .type-decision .note-type { background: rgba(162, 155, 254, 0.2); color: #a29bfe; }
+        
+        .note-date {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .note-content {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .note-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .note-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            background: rgba(102, 126, 234, 0.2);
+            border-radius: 6px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+        
+        .note-link:hover {
+            background: rgba(102, 126, 234, 0.4);
+        }
+        
+        .note-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .note-action-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background 0.3s;
+        }
+        
+        .note-action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .note-action-btn.delete:hover {
+            background: rgba(225, 112, 85, 0.3);
+            color: #e17055;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .sidebar-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Quick Stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Filter Tags */
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .filter-tag {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        
+        .filter-tag.active {
+            border-color: white;
+        }
+        
+        .filter-tag.all { background: rgba(255, 255, 255, 0.1); }
+        .filter-tag.update { background: rgba(0, 184, 148, 0.2); color: #00b894; }
+        .filter-tag.file { background: rgba(253, 203, 110, 0.2); color: #fdcb6e; }
+        .filter-tag.message { background: rgba(116, 185, 255, 0.2); color: #74b9ff; }
+        .filter-tag.action { background: rgba(225, 112, 85, 0.2); color: #e17055; }
+        .filter-tag.decision { background: rgba(162, 155, 254, 0.2); color: #a29bfe; }
+        
+        /* Recent Files */
+        .recent-files {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .file-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .file-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        
+        .file-icon.excel { background: rgba(0, 184, 148, 0.2); }
+        .file-icon.doc { background: rgba(116, 185, 255, 0.2); }
+        .file-icon.pdf { background: rgba(225, 112, 85, 0.2); }
+        
+        .file-info {
+            flex: 1;
+        }
+        
+        .file-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .file-date {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Updates Timeline */
+        .updates-timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .updates-timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+        
+        .timeline-item.completed::before {
+            background: #00b894;
+        }
+        
+        .timeline-item.pending::before {
+            background: #fdcb6e;
+        }
+        
+        .timeline-date {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 3px;
+        }
+        
+        .timeline-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Export Section */
+        .export-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .export-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .export-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal {
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .modal-close:hover {
+            opacity: 1;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Template Hub</a>
+        
+        <header>
+            <h1>📝 Weekly Notes & Updates</h1>
+            <p>Track your progress, notes, files, and updates in one place</p>
+        </header>
+        
+        <div class="main-grid">
+            <!-- Main Content -->
+            <div class="weekly-notes">
+                <div class="section-header">
+                    <h2>📅 Week Notes</h2>
+                    <div class="week-selector">
+                        <select id="weekSelect">
+                            <option value="2026-W02">Week 2 (Jan 6-12, 2026)</option>
+                            <option value="2026-W01">Week 1 (Dec 30 - Jan 5)</option>
+                        </select>
+                        <button class="btn btn-primary" onclick="toggleNoteForm()">+ Add Note</button>
+                    </div>
+                </div>
+                
+                <!-- Add Note Form -->
+                <div class="note-form" id="noteForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Note Type</label>
+                            <select id="noteType">
+                                <option value="update">📊 Update</option>
+                                <option value="file">📁 File/Link</option>
+                                <option value="message">💬 Message Note</option>
+                                <option value="action">⚡ Action Item</option>
+                                <option value="decision">🎯 Decision</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Priority</label>
+                            <select id="notePriority">
+                                <option value="normal">Normal</option>
+                                <option value="high">High</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Title</label>
+                        <input type="text" id="noteTitle" placeholder="Enter note title...">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Content</label>
+                        <textarea id="noteContent" placeholder="Enter your note content..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Links (one per line)</label>
+                        <textarea id="noteLinks" placeholder="https://example.com/file.xlsx&#10;https://docs.google.com/document/..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Tags (comma separated)</label>
+                        <input type="text" id="noteTags" placeholder="salesforce, crm, project-x">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-secondary" onclick="toggleNoteForm()">Cancel</button>
+                        <button class="btn btn-primary" onclick="addNote()">Save Note</button>
+                    </div>
+                </div>
+                
+                <!-- Notes List -->
+                <div class="notes-list" id="notesList">
+                    <!-- Sample Notes -->
+                    <div class="note-card type-update">
+                        <div class="note-header">
+                            <span class="note-title">CRM Enhancement Sprint 3 Completed</span>
+                            <div class="note-meta">
+                                <span class="note-type">Update</span>
+                                <span class="note-date">Jan 8, 2026</span>
+                            </div>
+                        </div>
+                        <div class="note-content">
+                            Successfully completed Sprint 3 deliverables including automated lead scoring and email integration. All UAT tests passed with 98% success rate.
+                        </div>
+                        <div class="note-links">
+                            <a href="#" class="note-link">📊 Sprint Report</a>
+                            <a href="#" class="note-link">📋 UAT Results</a>
+                        </div>
+                        <div class="note-actions">
+                            <button class="note-action-btn" onclick="copyToOneNote(this)">📋 Copy to OneNote</button>
+                            <button class="note-action-btn" onclick="editNote(this)">✏️ Edit</button>
+                            <button class="note-action-btn delete" onclick="deleteNote(this)">🗑️ Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card type-file">
+                        <div class="note-header">
+                            <span class="note-title">Performance Tracker Updated</span>
+                            <div class="note-meta">
+                                <span class="note-type">File</span>
+                                <span class="note-date">Jan 7, 2026</span>
+                            </div>
+                        </div>
+                        <div class="note-content">
+                            Updated the BSA-CRM Performance Tracker with Q1 OKRs and new KPI metrics. Added automated formulas for weekly calculations.
+                        </div>
+                        <div class="note-links">
+                            <a href="#" class="note-link">📊 BSA_CRM_OPTIMIZED_Dashboard.xlsx</a>
+                            <a href="#" class="note-link">📄 Manager_View_Guide.md</a>
+                        </div>
+                        <div class="note-actions">
+                            <button class="note-action-btn" onclick="copyToOneNote(this)">📋 Copy to OneNote</button>
+                            <button class="note-action-btn" onclick="editNote(this)">✏️ Edit</button>
+                            <button class="note-action-btn delete" onclick="deleteNote(this)">🗑️ Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card type-message">
+                        <div class="note-header">
+                            <span class="note-title">Manager Feedback on Dashboard</span>
+                            <div class="note-meta">
+                                <span class="note-type">Message</span>
+                                <span class="note-date">Jan 6, 2026</span>
+                            </div>
+                        </div>
+                        <div class="note-content">
+                            Manager requested additional metrics for stakeholder engagement tracking. Need to add communication frequency and satisfaction scores to the dashboard.
+                        </div>
+                        <div class="note-actions">
+                            <button class="note-action-btn" onclick="copyToOneNote(this)">📋 Copy to OneNote</button>
+                            <button class="note-action-btn" onclick="editNote(this)">✏️ Edit</button>
+                            <button class="note-action-btn delete" onclick="deleteNote(this)">🗑️ Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card type-action">
+                        <div class="note-header">
+                            <span class="note-title">Complete Salesforce Admin Certification</span>
+                            <div class="note-meta">
+                                <span class="note-type">Action</span>
+                                <span class="note-date">Jan 5, 2026</span>
+                            </div>
+                        </div>
+                        <div class="note-content">
+                            Schedule and complete Salesforce Administrator certification exam by end of Q1. Review study materials and complete practice tests.
+                        </div>
+                        <div class="note-links">
+                            <a href="#" class="note-link">📚 Study Guide</a>
+                            <a href="#" class="note-link">🎯 Trailhead Path</a>
+                        </div>
+                        <div class="note-actions">
+                            <button class="note-action-btn" onclick="copyToOneNote(this)">📋 Copy to OneNote</button>
+                            <button class="note-action-btn" onclick="editNote(this)">✏️ Edit</button>
+                            <button class="note-action-btn delete" onclick="deleteNote(this)">🗑️ Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card type-decision">
+                        <div class="note-header">
+                            <span class="note-title">Approved: New CRM Integration Architecture</span>
+                            <div class="note-meta">
+                                <span class="note-type">Decision</span>
+                                <span class="note-date">Jan 4, 2026</span>
+                            </div>
+                        </div>
+                        <div class="note-content">
+                            Leadership approved the proposed REST API integration approach for connecting Salesforce with the ERP system. Implementation to begin in Sprint 4.
+                        </div>
+                        <div class="note-links">
+                            <a href="#" class="note-link">📐 Architecture Diagram</a>
+                            <a href="#" class="note-link">📝 Decision Log</a>
+                        </div>
+                        <div class="note-actions">
+                            <button class="note-action-btn" onclick="copyToOneNote(this)">📋 Copy to OneNote</button>
+                            <button class="note-action-btn" onclick="editNote(this)">✏️ Edit</button>
+                            <button class="note-action-btn delete" onclick="deleteNote(this)">🗑️ Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Quick Stats -->
+                <div class="sidebar-card">
+                    <h3>📊 This Week</h3>
+                    <div class="quick-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="totalNotes">5</div>
+                            <div class="stat-label">Notes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="totalActions">1</div>
+                            <div class="stat-label">Actions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="totalFiles">2</div>
+                            <div class="stat-label">Files</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="totalDecisions">1</div>
+                            <div class="stat-label">Decisions</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Filter by Type -->
+                <div class="sidebar-card">
+                    <h3>🏷️ Filter by Type</h3>
+                    <div class="filter-tags">
+                        <span class="filter-tag all active" onclick="filterNotes('all')">All</span>
+                        <span class="filter-tag update" onclick="filterNotes('update')">Updates</span>
+                        <span class="filter-tag file" onclick="filterNotes('file')">Files</span>
+                        <span class="filter-tag message" onclick="filterNotes('message')">Messages</span>
+                        <span class="filter-tag action" onclick="filterNotes('action')">Actions</span>
+                        <span class="filter-tag decision" onclick="filterNotes('decision')">Decisions</span>
+                    </div>
+                </div>
+                
+                <!-- Recent Files -->
+                <div class="sidebar-card">
+                    <h3>📁 Recent Files</h3>
+                    <div class="recent-files">
+                        <div class="file-item">
+                            <div class="file-icon excel">📊</div>
+                            <div class="file-info">
+                                <div class="file-name">BSA_CRM_Dashboard.xlsx</div>
+                                <div class="file-date">Jan 8, 2026</div>
+                            </div>
+                        </div>
+                        <div class="file-item">
+                            <div class="file-icon doc">📄</div>
+                            <div class="file-info">
+                                <div class="file-name">Sprint_3_Report.md</div>
+                                <div class="file-date">Jan 7, 2026</div>
+                            </div>
+                        </div>
+                        <div class="file-item">
+                            <div class="file-icon pdf">📕</div>
+                            <div class="file-info">
+                                <div class="file-name">Architecture_Diagram.pdf</div>
+                                <div class="file-date">Jan 4, 2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Updates Timeline -->
+                <div class="sidebar-card">
+                    <h3>📈 Updates Timeline</h3>
+                    <div class="updates-timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">Jan 8</div>
+                            <div class="timeline-text">Sprint 3 completed</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">Jan 7</div>
+                            <div class="timeline-text">Dashboard updated</div>
+                        </div>
+                        <div class="timeline-item completed">
+                            <div class="timeline-date">Jan 6</div>
+                            <div class="timeline-text">Manager feedback received</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="timeline-date">Jan 10</div>
+                            <div class="timeline-text">Sprint 4 kickoff</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Export Options -->
+                <div class="sidebar-card">
+                    <h3>📤 Export</h3>
+                    <div class="export-options">
+                        <button class="export-btn" onclick="exportToOneNote()">
+                            <span>📓</span>
+                            <span>Copy All to OneNote</span>
+                        </button>
+                        <button class="export-btn" onclick="exportToMarkdown()">
+                            <span>📝</span>
+                            <span>Download as Markdown</span>
+                        </button>
+                        <button class="export-btn" onclick="exportToJSON()">
+                            <span>💾</span>
+                            <span>Export Data (JSON)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Copy to OneNote -->
+    <div class="modal-overlay" id="copyModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>📋 Copy to OneNote</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalContent" style="background: #fff; color: #333; padding: 20px; border-radius: 8px; font-family: 'Segoe UI', sans-serif;">
+                <!-- Content will be injected here -->
+            </div>
+            <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
+                <button class="btn btn-primary" onclick="selectAndCopy()">Select All & Copy</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle note form visibility
+        function toggleNoteForm() {
+            const form = document.getElementById('noteForm');
+            form.classList.toggle('active');
+        }
+        
+        // Add new note
+        function addNote() {
+            const type = document.getElementById('noteType').value;
+            const title = document.getElementById('noteTitle').value;
+            const content = document.getElementById('noteContent').value;
+            const links = document.getElementById('noteLinks').value;
+            const tags = document.getElementById('noteTags').value;
+            
+            if (!title || !content) {
+                alert('Please fill in title and content');
+                return;
+            }
+            
+            const notesList = document.getElementById('notesList');
+            const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            
+            const typeLabels = {
+                'update': 'Update',
+                'file': 'File',
+                'message': 'Message',
+                'action': 'Action',
+                'decision': 'Decision'
+            };
+            
+            let linksHTML = '';
+            if (links.trim()) {
+                const linkArray = links.split('\n').filter(l => l.trim());
+                linksHTML = '<div class="note-links">' + 
+                    linkArray.map(l => `<a href="${l.trim()}" class="note-link" target="_blank">🔗 ${l.trim().substring(0, 30)}...</a>`).join('') +
+                    '</div>';
+            }
+            
+            const noteHTML = `
+                <div class="note-card type-${type}">
+                    <div class="note-header">
+                        <span class="note-title">${title}</span>
+                        <div class="note-meta">
+                            <span class="note-type">${typeLabels[type]}</span>
+                            <span class="note-date">${today}</span>
+                        </div>
+                    </div>
+                    <div class="note-content">${content}</div>
+                    ${linksHTML}
+                    <div class="note-actions">
+                        <button class="note-action-btn" onclick="copyToOneNote(this)">📋 Copy to OneNote</button>
+                        <button class="note-action-btn" onclick="editNote(this)">✏️ Edit</button>
+                        <button class="note-action-btn delete" onclick="deleteNote(this)">🗑️ Delete</button>
+                    </div>
+                </div>
+            `;
+            
+            notesList.insertAdjacentHTML('afterbegin', noteHTML);
+            
+            // Clear form
+            document.getElementById('noteTitle').value = '';
+            document.getElementById('noteContent').value = '';
+            document.getElementById('noteLinks').value = '';
+            document.getElementById('noteTags').value = '';
+            toggleNoteForm();
+            
+            // Update stats
+            updateStats();
+            
+            // Save to localStorage
+            saveNotes();
+        }
+        
+        // Filter notes by type
+        function filterNotes(type) {
+            const notes = document.querySelectorAll('.note-card');
+            const tags = document.querySelectorAll('.filter-tag');
+            
+            tags.forEach(tag => tag.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            notes.forEach(note => {
+                if (type === 'all' || note.classList.contains(`type-${type}`)) {
+                    note.style.display = 'block';
+                } else {
+                    note.style.display = 'none';
+                }
+            });
+        }
+        
+        // Copy note to OneNote format
+        function copyToOneNote(btn) {
+            const noteCard = btn.closest('.note-card');
+            const title = noteCard.querySelector('.note-title').textContent;
+            const content = noteCard.querySelector('.note-content').textContent;
+            const date = noteCard.querySelector('.note-date').textContent;
+            const type = noteCard.querySelector('.note-type').textContent;
+            
+            const links = noteCard.querySelectorAll('.note-link');
+            let linksHTML = '';
+            if (links.length > 0) {
+                linksHTML = '<p><strong>Links:</strong></p><ul>' + 
+                    Array.from(links).map(l => `<li><a href="${l.href}">${l.textContent}</a></li>`).join('') +
+                    '</ul>';
+            }
+            
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <h2 style="color: #333; border-bottom: 2px solid #667eea; padding-bottom: 10px;">${title}</h2>
+                <p style="color: #666; font-size: 0.9rem;"><strong>Date:</strong> ${date} | <strong>Type:</strong> ${type}</p>
+                <p style="line-height: 1.6; margin: 15px 0;">${content}</p>
+                ${linksHTML}
+            `;
+            
+            document.getElementById('copyModal').classList.add('active');
+        }
+        
+        // Select and copy modal content
+        function selectAndCopy() {
+            const content = document.getElementById('modalContent');
+            const range = document.createRange();
+            range.selectNodeContents(content);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand('copy');
+            alert('Copied to clipboard! Paste into OneNote.');
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('copyModal').classList.remove('active');
+        }
+        
+        // Delete note
+        function deleteNote(btn) {
+            if (confirm('Are you sure you want to delete this note?')) {
+                btn.closest('.note-card').remove();
+                updateStats();
+                saveNotes();
+            }
+        }
+        
+        // Edit note (placeholder)
+        function editNote(btn) {
+            alert('Edit functionality - In a full implementation, this would open the note in edit mode.');
+        }
+        
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalNotes').textContent = document.querySelectorAll('.note-card').length;
+            document.getElementById('totalActions').textContent = document.querySelectorAll('.note-card.type-action').length;
+            document.getElementById('totalFiles').textContent = document.querySelectorAll('.note-card.type-file').length;
+            document.getElementById('totalDecisions').textContent = document.querySelectorAll('.note-card.type-decision').length;
+        }
+        
+        // Export all notes to OneNote format
+        function exportToOneNote() {
+            const notes = document.querySelectorAll('.note-card');
+            let exportHTML = '<h1>Weekly Notes Export</h1>';
+            
+            notes.forEach(note => {
+                const title = note.querySelector('.note-title').textContent;
+                const content = note.querySelector('.note-content').textContent;
+                const date = note.querySelector('.note-date').textContent;
+                const type = note.querySelector('.note-type').textContent;
+                
+                exportHTML += `
+                    <h2>${title}</h2>
+                    <p><strong>Date:</strong> ${date} | <strong>Type:</strong> ${type}</p>
+                    <p>${content}</p>
+                    <hr>
+                `;
+            });
+            
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = exportHTML;
+            document.getElementById('copyModal').classList.add('active');
+        }
+        
+        // Export to Markdown
+        function exportToMarkdown() {
+            const notes = document.querySelectorAll('.note-card');
+            let markdown = '# Weekly Notes Export\n\n';
+            
+            notes.forEach(note => {
+                const title = note.querySelector('.note-title').textContent;
+                const content = note.querySelector('.note-content').textContent;
+                const date = note.querySelector('.note-date').textContent;
+                const type = note.querySelector('.note-type').textContent;
+                
+                markdown += `## ${title}\n`;
+                markdown += `**Date:** ${date} | **Type:** ${type}\n\n`;
+                markdown += `${content}\n\n`;
+                markdown += `---\n\n`;
+            });
+            
+            const blob = new Blob([markdown], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'weekly-notes.md';
+            a.click();
+        }
+        
+        // Export to JSON
+        function exportToJSON() {
+            const notes = document.querySelectorAll('.note-card');
+            const data = [];
+            
+            notes.forEach(note => {
+                data.push({
+                    title: note.querySelector('.note-title').textContent,
+                    content: note.querySelector('.note-content').textContent,
+                    date: note.querySelector('.note-date').textContent,
+                    type: note.querySelector('.note-type').textContent
+                });
+            });
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'weekly-notes.json';
+            a.click();
+        }
+        
+        // Save notes to localStorage
+        function saveNotes() {
+            const notesList = document.getElementById('notesList').innerHTML;
+            localStorage.setItem('weeklyNotes', notesList);
+        }
+        
+        // Load notes from localStorage
+        function loadNotes() {
+            const saved = localStorage.getItem('weeklyNotes');
+            if (saved) {
+                document.getElementById('notesList').innerHTML = saved;
+                updateStats();
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // loadNotes(); // Uncomment to enable persistence
+            updateStats();
+        });
+    </script>
+</body>
+</html>
